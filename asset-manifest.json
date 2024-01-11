@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.46f7909e.css",
+    "main.js": "/static/js/main.7eca1258.js",
+    "static/js/787.ff4fd3fc.chunk.js": "/static/js/787.ff4fd3fc.chunk.js",
+    "static/media/PlayfairDisplay-Medium.ttf": "/static/media/PlayfairDisplay-Medium.b6b10a3a3492328a0c3f.ttf",
+    "static/media/PlayfairDisplay-Bold.ttf": "/static/media/PlayfairDisplay-Bold.c3c9165182044bf7f179.ttf",
+    "static/media/PlayfairDisplay-Regular.ttf": "/static/media/PlayfairDisplay-Regular.6a97b5c64f316f567fa1.ttf",
+    "static/media/PlayfairDisplay-MediumItalic.ttf": "/static/media/PlayfairDisplay-MediumItalic.72f359bd6ae2dbf3a28a.ttf",
+    "static/media/InstrumentSerif-Italic.ttf": "/static/media/InstrumentSerif-Italic.9e860caa09c61b51b60c.ttf",
+    "static/media/InstrumentSerif-Regular.ttf": "/static/media/InstrumentSerif-Regular.dd726bb91a354547f0d3.ttf",
+    "static/media/tmdb-logo.svg": "/static/media/tmdb-logo.bf7f470b3821af1da7fa249c87dadea3.svg",
+    "index.html": "/index.html",
+    "main.46f7909e.css.map": "/static/css/main.46f7909e.css.map",
+    "main.7eca1258.js.map": "/static/js/main.7eca1258.js.map",
+    "787.ff4fd3fc.chunk.js.map": "/static/js/787.ff4fd3fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46f7909e.css",
+    "static/js/main.7eca1258.js"
+  ]
+}
