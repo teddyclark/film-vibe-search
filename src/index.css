@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'InstrumentSerif-Italic';
+  src: url('./fonts/InstrumentSerif-Italic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'InstrumentSerif-Regular';
+  src: url('./fonts/InstrumentSerif-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-MediumItalic';
+  src: url('./fonts/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Regular';
+  src: url('./fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Medium';
+  src: url('./fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'PlayfairDisplay-Bold';
+  src: url('./fonts/PlayfairDisplay-Bold.ttf') format('truetype');
+}
