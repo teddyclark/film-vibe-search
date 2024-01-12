@@ -99,7 +99,7 @@ const StyledModal = styled(Modal)<StyledModalProps>`
 
   padding: 32px;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
     ${(props) => `url(${props.background})`};
   background-size: cover;
   background-position: center center;

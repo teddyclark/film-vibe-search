@@ -39,26 +39,27 @@ export const SearchBar = (props: SearchBarProps) => {
     };
   }, []);
 
+  const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    props.handleSearch();
+  };
+
   return (
-    <SearchBarContainer>
-      <InputContainer>
-        <StyledInput
-          onChange={props.onChange}
-          value={props.value}
-          placeholder={PLACEHOLDERS[placeholder]}
-          type="text"
-        />
-        <SearchButton
-          type="submit"
-          onClick={props.handleSearch}
-          onKeyDown={(e) =>
-            e.key === "Enter" ? props.handleSearch : () => undefined
-          }
-        >
-          <IconSearch width={25} />
-        </SearchButton>
-      </InputContainer>
-    </SearchBarContainer>
+    <form onSubmit={onFormSubmit}>
+      <SearchBarContainer>
+        <InputContainer>
+          <StyledInput
+            onChange={props.onChange}
+            value={props.value}
+            placeholder={PLACEHOLDERS[placeholder]}
+            type="text"
+          />
+          <SearchButton type="submit">
+            <IconSearch width={25} />
+          </SearchButton>
+        </InputContainer>
+      </SearchBarContainer>
+    </form>
   );
 };
 
@@ -68,11 +69,21 @@ const SearchBarContainer = styled.div`
   align-items: center;
 
   padding-top: 32px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    align-items: center;
+  }
 `;
 
 const InputContainer = styled.div`
-  position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    width: 85%;
+  }
 `;
 
 const StyledInput = styled.input`
@@ -94,12 +105,14 @@ const StyledInput = styled.input`
 `;
 
 const SearchButton = styled.button`
-  position: absolute;
-  right: 12px;
-  top: 12px;
-
   border: none;
   background-color: transparent;
+  margin-left: -50px;
 
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    right: -24px;
+    z-index: 2;
+  }
 `;

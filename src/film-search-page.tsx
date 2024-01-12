@@ -43,33 +43,37 @@ export const FilmSearchPage = () => {
   };
 
   return (
-    <PageContainer>
-      <Header1>Film Mood Search</Header1>
-      <Header2>Discover movies based on your current vibe</Header2>
+    <>
+      <PageContainer>
+        <Header1>Film Mood Search</Header1>
+        <Header2>Discover movies based on your current vibe</Header2>
 
-      <SearchBar
-        onChange={handleChange}
-        handleSearch={handleSearch}
-        value={searchInput}
-      />
+        <SearchBar
+          onChange={handleChange}
+          handleSearch={handleSearch}
+          value={searchInput}
+        />
 
-      <MovieContainer>
-        {movieData.length != 0 &&
-          movieData.map((movie: MovieData) => {
-            return <MovieTile key={movie.id} movieData={movie} />;
-          })}
+        <MovieContainer>
+          {movieData.length != 0 &&
+            movieData.map((movie: MovieData) => {
+              return <MovieTile key={movie.id} movieData={movie} />;
+            })}
 
-        {isLoading && <Header3>Finding films...</Header3>}
-      </MovieContainer>
+          {isLoading && <Header3>Finding films...</Header3>}
+        </MovieContainer>
+      </PageContainer>
 
       <Footer>
-        <Text>&copy; 2024 Teddy Clark</Text>
-        <div>
-          <Text>Movie data powered by </Text>
-          <img src={tmdb_logo} alt="TMDb logo" width={100} />
-        </div>
+        <FooterContent>
+          <Text>&copy; 2024 Teddy Clark</Text>
+          <div>
+            <Text>Movie data powered by </Text>
+            <img src={tmdb_logo} alt="TMDb logo" width={100} />
+          </div>
+        </FooterContent>
       </Footer>
-    </PageContainer>
+    </>
   );
 };
 
@@ -86,11 +90,7 @@ const PageContainer = styled.div`
   padding-bottom: 64px;
   gap: 16px;
 
-  background: linear-gradient(
-    0deg,
-    rgba(14, 33, 21, 1) 25%,
-    rgba(119, 5, 226, 1) 100%
-  );
+  background: linear-gradient(180deg, #530094 25%, rgba(9, 0, 15, 1) 100%);
   color: #f0f0e7;
 `;
 
@@ -113,13 +113,17 @@ const MovieContainer = styled.div`
 `;
 
 const Footer = styled.div`
+  background-color: #09000f;
+  color: #f0f0e7;
+  width: 100%;
+  margin-top: auto;
+`;
+
+const FooterContent = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  position: absolute;
-
   gap: 16px;
-  width: 95%;
-  bottom: 0;
-  padding-bottom: 16px;
+  align-items: center;
+  padding: 32px;
 `;
