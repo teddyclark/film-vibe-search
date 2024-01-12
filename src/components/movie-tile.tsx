@@ -115,6 +115,7 @@ const StyledModal = styled(Modal)<StyledModalProps>`
     width: 100%;
     height: 100%;
     padding-top: 64px;
+    overflow-y: scroll;
   }
 `;
 

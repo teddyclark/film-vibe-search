@@ -113,6 +113,6 @@ const SearchButton = styled.button`
 
   @media (max-width: 768px) {
     right: -24px;
-    z-index: 2;
+    color: #000000;
   }
 `;
