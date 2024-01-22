@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Modal from "react-modal";
 
 import { MovieData } from "../utils/types";
-import { Header2, Header3, Header4, Text } from "./text";
+import { Header2, Header3, Text } from "./text";
 import { useState } from "react";
 import CloseIcon from "./close-icon";
 
@@ -125,6 +125,7 @@ const ContentContainer = styled.div`
   text-align: left;
   gap: 16px;
   padding-top: 32px;
+  padding-bottom: 32px;
 `;
 
 const InfoContainer = styled.div`

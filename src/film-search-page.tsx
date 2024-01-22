@@ -49,7 +49,7 @@ export const FilmSearchPage = () => {
     <>
       <PageContainer>
         <Header1>Film Mood Search</Header1>
-        <Header2>Discover movies based on your current vibe</Header2>
+        <Header2 padded>Discover movies based on your current vibe</Header2>
 
         <SearchBar
           onChange={handleChange}
