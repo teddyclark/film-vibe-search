@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Modal from "react-modal";
 
 import { MovieData } from "../utils/types";
-import { Header2, Header3, Text } from "./text";
+import { Header2, Header3, Header4, Text } from "./text";
 import { useState } from "react";
 import CloseIcon from "./close-icon";
 
@@ -30,6 +30,7 @@ export const MovieTile = ({ movieData }: { movieData: MovieData }) => {
             alignItems: "center",
           },
         }}
+        appElement={document.getElementById("root") as HTMLElement}
       >
         <ButtonContainer>
           <CloseButton onClick={() => setIsModalOpen(false)}>
@@ -38,29 +39,26 @@ export const MovieTile = ({ movieData }: { movieData: MovieData }) => {
         </ButtonContainer>
 
         <Poster src={IMAGE_PATH + movieData.poster_path} />
-        <Header3>{movieData.title}</Header3>
+        <Header2>{movieData.title}</Header2>
+        <Text>{"Directed by " + movieData.director}</Text>
 
         <ContentContainer>
-          <LeftContainer>
+          <InfoContainer>
             <div>
               <Header2>Release Date</Header2>
               <Text>{movieData.release_date}</Text>
             </div>
 
             <div>
-              <Header2>Popularity</Header2>
-              <Text>{movieData.popularity} / 100</Text>
-            </div>
-
-            <div>
               <Header2>Rating</Header2>
               <Text>{movieData.vote_average} / 10</Text>
             </div>
-          </LeftContainer>
-          <RightContainer>
+          </InfoContainer>
+
+          <div>
             <Header2>Overview</Header2>
             <Text>{movieData.overview}</Text>
-          </RightContainer>
+          </div>
         </ContentContainer>
       </StyledModal>
     </>
@@ -116,26 +114,23 @@ const StyledModal = styled(Modal)<StyledModalProps>`
     height: 100%;
     padding-top: 64px;
     overflow-y: scroll;
+    overflow-x: hidden;
   }
 `;
 
 const ContentContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 32px;
-`;
-
-const LeftContainer = styled.div`
-  display: flex;
   flex-direction: column;
+  justify-content: left;
+  text-align: left;
   gap: 16px;
+  padding-top: 32px;
 `;
 
-const RightContainer = styled.div`
+const InfoContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 50%;
+  flex-direction: row;
+  gap: 32px;
 `;
 
 const ButtonContainer = styled.div`
