@@ -15,7 +15,7 @@ export const chatGPT = async (query: string) => {
         content: `Give me 6 movies that fit the micro-genre of '${query}'? Include only movie titles, year, and nothing else in a list.`,
       },
     ],
-    model: "gpt-3.5-turbo",
+    model: "gpt-4o-mini",
   });
 
   // parse chatGPT response
