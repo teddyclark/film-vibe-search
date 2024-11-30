@@ -34,7 +34,10 @@ export const FilmSearchPage = () => {
       fetch(`${API_BASE_URL}&query=${movie.title}&year=${movie.year}`)
         .then((response) => response.json())
         .then((data) =>
-          setMovieData((prevData) => [...prevData, data.results[0]]),
+          setMovieData((prevData) => [
+            ...prevData,
+            { ...data.results[0], director: movie.director } as MovieData,
+          ]),
         )
         .catch((err) => console.error("error retrieving movie details", err));
     });
@@ -46,7 +49,7 @@ export const FilmSearchPage = () => {
     <>
       <PageContainer>
         <Header1>Film Mood Search</Header1>
-        <Header2>Discover movies based on your current vibe</Header2>
+        <Header2 padded>Discover movies based on your current vibe</Header2>
 
         <SearchBar
           onChange={handleChange}

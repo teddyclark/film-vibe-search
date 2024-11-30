@@ -11,6 +11,7 @@ export type MovieData = {
   original_title: string;
   original_language: string;
   vote_average: number;
+  director: string;
 };
 
 export type MovieDataResponse = {
@@ -23,4 +24,5 @@ export type MovieDataResponse = {
 export type AiMovieResponse = {
   title: string;
   year: string;
+  director: string;
 };

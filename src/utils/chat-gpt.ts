@@ -12,7 +12,7 @@ export const chatGPT = async (query: string) => {
     messages: [
       {
         role: "system",
-        content: `Give me 6 movies that fit the micro-genre of '${query}'? Include only movie titles, year, and nothing else in a list.`,
+        content: `Give me 6 movies that fit the micro-genre of '${query}'? Return the movies in a list with the format "Title (Year) - Director`,
       },
     ],
     model: "gpt-4o-mini",
@@ -31,10 +31,15 @@ export const chatGPT = async (query: string) => {
 
     split.forEach((movie) => {
       const movieSplit = movie.split(" (");
-      const title = movieSplit[0].substring(3);
-      const year = movieSplit[1].replace(")", "");
+      const infoSplit = movieSplit[1].split("-");
 
-      recommendations.push({ title, year });
+      const title = movieSplit[0].substring(3).trim();
+      const year = infoSplit[0].replace(") ", "").trim();
+      const director = infoSplit[1].replace(" - ", "").trim();
+
+      console.log("title: ", title, "year: ", year, "director: ", director);
+
+      recommendations.push({ title, year, director });
     });
   }
 
