@@ -12,7 +12,7 @@ export const chatGPT = async (query: string) => {
     messages: [
       {
         role: "system",
-        content: `Give me 6 movies that fit the micro-genre of '${query}'? Return the movies in a list with the format "Title (Year) - Director`,
+        content: `Give me 6 movies that fit the micro-genre of '${query}'? Return the movies in a list with the format "Title (Year) - Director. Provide just the list, and no other text.`,
       },
     ],
     model: "gpt-4o-mini",
